@@ -1,15 +1,15 @@
 package com.shreya.servlet.controller;
-import  com.shreya.servlet.exception.CustomerException;
-import  com.shreya.servlet.impl.OrderNumberImpl;
-import  com.shreya.servlet.model.Customer;
-import  com.shreya.servlet.model.Order;
-import  com.shreya.servlet.service.OrderNumberService;
-import  com.shreya.servlet.service.OrderService;
-import jakarta.servlet.http.HttpServlet;
+
+import com.shreya.servlet.exception.CustomerException;
+import com.shreya.servlet.impl.OrderNumberImpl;
+import com.shreya.servlet.model.Customer;
+import com.shreya.servlet.model.Order;
+import com.shreya.servlet.service.OrderNumberService;
+import com.shreya.servlet.service.OrderService;
 
 import java.util.Scanner;
 
-public class OrderNumberController extends HttpServlet {
+public class OrderNumberController {
 
     OrderNumberService orderNumberService = new OrderNumberImpl();
     OrderService orderService = new OrderService();
@@ -19,7 +19,7 @@ public class OrderNumberController extends HttpServlet {
 
     public void run() {
         int option;
-        do{
+        do {
             System.out.println("\n---- Order ----");
             System.out.println("1. View Order Details");
             System.out.println("0. Back to Main Menu");
@@ -29,7 +29,7 @@ public class OrderNumberController extends HttpServlet {
             try {
                 switch (option) {
                     case 1:
-                        //orderService.createOrder(name);
+                        orderService.createOrder();
                         orderService.displayOrder();
                         System.out.print("Order " + order);
                         break;
