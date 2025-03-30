@@ -10,8 +10,19 @@
     <servlet-class>com.shreya.servlet.controller.CustomerController</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>deliveryAgentController</servlet-name>
+    <servlet-class>com.shreya.servlet.controller.DeliveryAgentController</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>customerController</servlet-name>
     <url-pattern>/customer-controller</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>deliveryAgentController</servlet-name>
+    <url-pattern>/deliveryAgentController</url-pattern>
+  </servlet-mapping>
+
 </web-app>
