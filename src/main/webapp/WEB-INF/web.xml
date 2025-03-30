@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+    <servlet-name>customerController</servlet-name>
+    <servlet-class>com.shreya.servlet.controller.CustomerController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>customerController</servlet-name>
+    <url-pattern>/customer-controller</url-pattern>
+  </servlet-mapping>
 </web-app>
