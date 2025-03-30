@@ -20,7 +20,7 @@ public class DeliveryAgentController extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         writer.println("<html><body>");
-        writer.println("<h1>" + deliveryAgentService + "</h1>");
+        writer.println("<h1>" + deliveryAgentService.delivery(name) + "</h1>");
 
         writer.println("</body></html>");
     }
