@@ -29,7 +29,7 @@ public class OrderNumberController extends HttpServlet {
             try {
                 switch (option) {
                     case 1:
-                        orderService.createOrder();
+                        //orderService.createOrder(name);
                         orderService.displayOrder();
                         System.out.print("Order " + order);
                         break;

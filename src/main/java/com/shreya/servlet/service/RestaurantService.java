@@ -8,9 +8,6 @@ public class RestaurantService {
     private static final HashMap<Integer,Restaurant> restaurants = new HashMap<>();
     private static Scanner sc = new Scanner(System.in);
 
-    public void printCustomer(){
-        System.out.println(restaurants);
-    }
     public static void createRestaurant(){
 
            Restaurant restaurant = new Restaurant();

@@ -15,6 +15,16 @@
     <servlet-class>com.shreya.servlet.controller.DeliveryAgentController</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>orderController</servlet-name>
+    <servlet-class>com.shreya.servlet.controller.OrderController</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>restaurantService</servlet-name>
+    <servlet-class>com.shreya.servlet.controller.RestaurantController</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>customerController</servlet-name>
     <url-pattern>/customer-controller</url-pattern>
@@ -23,6 +33,16 @@
   <servlet-mapping>
     <servlet-name>deliveryAgentController</servlet-name>
     <url-pattern>/deliveryAgentController</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>orderController</servlet-name>
+  <url-pattern>/orderController</url-pattern>
+</servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>restaurantService</servlet-name>
+    <url-pattern>/restaurantService</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -3,14 +3,93 @@ import com.shreya.servlet.exception.CustomerException;
 import  com.shreya.servlet.model.Customer;
 import  com.shreya.servlet.model.Restaurant;
 import  com.shreya.servlet.service.RestaurantService;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class RestaurantController extends HttpServlet {
 
 
-    private RestaurantService restaurantService = new RestaurantService();
+    private static final RestaurantService restaurantService = new RestaurantService();
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println("----------inside the doGet() method------------");
+        String name = request.getParameter("name");
+
+        response.setContentType("text/html");
+        PrintWriter writer = response.getWriter();
+        writer.println("<html><body>");
+        writer.println("<h1>" + restaurantService+ "</h1>");
+
+        writer.println("</body></html>");
+    }
+
+    public void service(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("-----------inside the service() method---------------");
+        this.doGet(request,response);
+    }
+
+    public void destroy(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("-----------inside the destroy() method---------------");
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private Customer C = new Customer();
     Restaurant restaurant = new Restaurant();
     private Scanner sc = new Scanner(System.in);

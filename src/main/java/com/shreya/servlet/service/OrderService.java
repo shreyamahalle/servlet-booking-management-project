@@ -2,7 +2,6 @@ package com.shreya.servlet.service;
 import  com.shreya.servlet.model.Order;
 import  com.shreya.servlet.repository.OrderRepository;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -15,7 +14,7 @@ public class OrderService implements OrderNumberService {
     void printCustomer(Order order){
         System.out.println(order);
     }
-    public Order createOrder(){
+    public Order createOrder(String name){
         Order order = new Order();
         orderRepository.createOrder(order);
         orderRepository.displayOrder(order);
