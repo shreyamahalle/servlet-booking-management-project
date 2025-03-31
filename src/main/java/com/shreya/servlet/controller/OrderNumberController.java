@@ -14,9 +14,9 @@ public class OrderNumberController extends HttpServlet {
 
     OrderNumberService orderNumberService = new OrderNumberImpl();
     OrderService orderService = new OrderService();
-    private Customer C = new Customer();
+    private static final Customer C = new Customer();
     Order order = new Order();
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public void run() {
         int option;
