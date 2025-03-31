@@ -109,17 +109,17 @@ VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
 
 - Run the file to launch the application.
 
-8. **Build the project:**
+## 8. **Build the project:**
 
    ```bash
    mvn clean install
    ```
 
-9. **Deploy to Tomcat:**
+## 9. **Deploy to Tomcat:**
 
    Copy the generated WAR file from the `target` directory to the `webapps` directory of your Tomcat server.
 
-10. **Start Tomcat:**
+## 10. **Start Tomcat:**
 
    Start the Tomcat server and access the application at `http://localhost:8080/customer-controller`.
 
