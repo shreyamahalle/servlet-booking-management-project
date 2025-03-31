@@ -9,21 +9,23 @@
   <url>http://maven.apache.org</url>
 
   <dependencies>
-
+    <!-- Jakarta Servlet API dependency -->
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>6.1.0</version>
+      <version>6.1.0</version>  <!-- Use the correct version compatible with your Tomcat version -->
       <scope>provided</scope>
     </dependency>
+
+    <!-- Lombok dependency (optional, but useful for reducing boilerplate code) -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.34</version>
       <scope>provided</scope>
     </dependency>
-
   </dependencies>
+
   <build>
     <finalName>servlet-booking-management-project</finalName>
       <plugins>

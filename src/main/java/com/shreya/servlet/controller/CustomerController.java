@@ -1,46 +1,40 @@
 package com.shreya.servlet.controller;
 
-import com.shreya.servlet.service.CustomerService;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import com.shreya.servlet.service.CustomerService;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CustomerController extends HttpServlet {
 
     private final CustomerService customerService = new CustomerService();
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("--------------- inside the doGet() method ---------------");
 
+        String name = request.getParameter("name");
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         writer.println("<html><body>");
-        writer.println("<h1>" + customerService.greet() + "</h1>");
-
+        writer.println("<h1>" + customerService.greet(name) + "</h1>");
         writer.println("</body></html>");
     }
 
+    @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("--------------- inside the service() method ---------------");
-        this.doGet(request, response);
+        super.service(request, response);
     }
 
-    public void destroy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    public void destroy() {
         System.out.println("--------------- inside the destroy() method ---------------");
-
     }
 }
-
-
-
-
 
 
 

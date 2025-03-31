@@ -1,23 +1,16 @@
 package com.shreya.servlet.service;
-
-import com.shreya.servlet.exception.CustomerNotfound;
-import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.repository.CustomerRepository;
-
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
 
 
 public class CustomerService {
 
     private static final CustomerRepository customerRepository = new CustomerRepository();
 
-    public String greet() {
-
-        return "hi ";
+    public String greet(String name) {
+        if(name.isEmpty()){
+            return  "hello all";
+        }
+        return "hello " + name;
     }
 }
 
