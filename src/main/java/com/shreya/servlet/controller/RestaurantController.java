@@ -1,15 +1,15 @@
 package com.shreya.servlet.controller;
-
 import com.shreya.servlet.exception.CustomerException;
 import com.shreya.servlet.model.Restaurant;
 import com.shreya.servlet.service.RestaurantService;
+import jakarta.servlet.http.HttpServlet;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class RestaurantController {
+public class RestaurantController extends HttpServlet {
 
-    private RestaurantService restaurantService = new RestaurantService();
+    private static final RestaurantService restaurantService = new RestaurantService();
     Restaurant restaurant = new Restaurant();
     private final Scanner sc = new Scanner(System.in);
 

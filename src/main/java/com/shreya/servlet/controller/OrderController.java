@@ -1,12 +1,16 @@
 package com.shreya.servlet.controller;
+
 import com.shreya.servlet.exception.CustomerException;
+import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.model.Order;
+import com.shreya.servlet.service.CustomerService;
 import com.shreya.servlet.service.OrderService;
+import jakarta.servlet.http.HttpServlet;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class OrderController {
+public class OrderController extends HttpServlet {
 
     OrderService orderService = new OrderService();
     Order order = new Order();

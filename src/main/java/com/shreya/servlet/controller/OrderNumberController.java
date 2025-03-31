@@ -6,10 +6,11 @@ import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.model.Order;
 import com.shreya.servlet.service.OrderNumberService;
 import com.shreya.servlet.service.OrderService;
+import jakarta.servlet.http.HttpServlet;
 
 import java.util.Scanner;
 
-public class OrderNumberController {
+public class OrderNumberController extends HttpServlet {
 
     OrderNumberService orderNumberService = new OrderNumberImpl();
     OrderService orderService = new OrderService();

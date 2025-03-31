@@ -1,8 +1,6 @@
 package com.shreya.servlet.repository;
-
 import com.shreya.servlet.model.Customer;
-import com.shreya.maven.service.ConnectionService;
-
+import com.shreya.servlet.service.ConnectionService;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -160,9 +158,10 @@ public class CustomerRepository {
 
     Set<Customer> customers = new HashSet<>();
 
-    public void createCustomer(Customer customer) {
+    public boolean createCustomer(Customer customer) {
 
         customers.add(customer);
+        return false;
     }
 
     public void displayCustomers(Customer customer) {
