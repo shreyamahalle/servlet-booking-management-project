@@ -35,7 +35,6 @@ public class OrderController extends HttpServlet {
                     case 1:
                         orderService.createOrder();
                         orderService.displayOrder();
-                        orderService.displayOrder();
                         System.out.print("Order " + order);
                         break;
                     case 2:
