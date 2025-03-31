@@ -1,5 +1,5 @@
 package com.shreya.servlet.controller;
-import com.shreya.servlet.model.Customer;
+
 import com.shreya.servlet.service.CustomerService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -18,38 +18,25 @@ public class CustomerController extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("--------------- inside the doGet() method ---------------");
-        List<Customer> customerList = new ArrayList<>();
-        try {
-            customerList = customerService.retrieveCustomers();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<html><body>");
-            out.println("<h1>Student Details</h1>");
-            out.println("<table border=1>");
-            out.println("<tr>");
-            out.println("<th>id</th>");
-            out.println("<th>name</th>");
-            out.println("<th>age</th>");
-            out.println("<th>city</th>");
-            out.println("<th>mobileNo</th>");
-            out.println("</tr>");
-            customerList.parallelStream().forEach(customer -> {
-                out.println("<tr>");
-                out.println("<td>" + customer.getId() + "</td>");
-                out.println("<td>" + customer.getName() + "</td>");
-                out.println("<td>" + customer.getCity() + "</td>");
-                out.println("<td>" + customer.getAge() + "</td>");
-                out.println("<td>" + customer.getMobileNo() + "</td>");
-                out.println("</tr>");
-            });
-            out.println("</table>");
-            out.println("</body></html>");
-        }
+
+        response.setContentType("text/html");
+        PrintWriter writer = response.getWriter();
+        writer.println("<html><body>");
+        writer.println("<h1>" + customerService.greet() + "</h1>");
+
+        writer.println("</body></html>");
     }
 
+    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("--------------- inside the service() method ---------------");
+        this.doGet(request, response);
+    }
+
+    public void destroy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("--------------- inside the destroy() method ---------------");
+
+    }
+}
 
 
 
@@ -63,12 +50,37 @@ public class CustomerController extends HttpServlet {
 
 
 
-
-
-
-
-
-
+//        List<Customer> customerList = new ArrayList<>();
+//        try {
+//            customerList = customerService.retrieveCustomers();
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//            response.setContentType("text/html");
+//            PrintWriter out = response.getWriter();
+//            out.println("<html><body>");
+//            out.println("<h1>Student Details</h1>");
+//            out.println("<table border=1>");
+//            out.println("<tr>");
+//            out.println("<th>id</th>");
+//            out.println("<th>name</th>");
+//            out.println("<th>age</th>");
+//            out.println("<th>city</th>");
+//            out.println("<th>mobileNo</th>");
+//            out.println("</tr>");
+//            customerList.parallelStream().forEach(customer -> {
+//                out.println("<tr>");
+//                out.println("<td>" + customer.getId() + "</td>");
+//                out.println("<td>" + customer.getName() + "</td>");
+//                out.println("<td>" + customer.getCity() + "</td>");
+//                out.println("<td>" + customer.getAge() + "</td>");
+//                out.println("<td>" + customer.getMobileNo() + "</td>");
+//                out.println("</tr>");
+//            });
+//            out.println("</table>");
+//            out.println("</body></html>");
+//        }
+//    }
 
 
 //    CustomerRepository customerRepository = new CustomerRepository();

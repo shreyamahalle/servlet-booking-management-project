@@ -1,52 +1,25 @@
 package com.shreya.servlet.service;
+
+import com.shreya.servlet.exception.CustomerNotfound;
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.repository.CustomerRepository;
+
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
 
 public class CustomerService {
 
     private static final CustomerRepository customerRepository = new CustomerRepository();
 
-    public boolean createCustomer(Customer customer) throws SQLException {
-        if (customerRepository.createCustomer(customer)) {
-            System.out.println("Customer inserted successfully!");
-        } else {
-            System.out.println("Customer to insert Student.");
-            return false;
-        }
-        return true;
-    }
+    public String greet() {
 
-    public List<Customer> retrieveCustomers() throws SQLException {
-        return customerRepository.retrieveCustomers();
+        return "hi ";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -96,7 +69,7 @@ public class CustomerService {
 //                .forEach(entry -> System.out.println("Customer ID: " + entry.getKey() + " = Customer Info: " + entry.getValue()));
 //    }
 //
-//    public boolean createCustomer(Customer customer) {
+//    public void createCustomer() {
 //        Customer customer = new Customer();
 //        customerRepository.createCustomer(customer);
 //        customerRepository.displayCustomers(customer);
@@ -128,7 +101,6 @@ public class CustomerService {
 //        } catch (Exception e) {
 //            System.out.println("Invalid input type correct data");
 //        }
-//        return false;
 //    }
 //
 //    public void displayCustomers() {
