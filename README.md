@@ -1,17 +1,31 @@
 # servlet-booking-management-project
-servlet-booking-management-project
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
+
 
 # **servlet-booking-management-project**
 
 Welcome to the **servlet-booking-management-project**, a simple yet powerful Java application that simulates a booking management system. This project uses Object-Oriented Programming (OOP) principles to create a seamless experience for managing customers, delivery agents, orders, and restaurants.
 
 ---
+## Introduction
 
 ## **🚀 Project Overview**
 
 The **servlet-booking-management-project** is a practical demonstration of a booking management system with real-world interactions. It provides functionality for booking management, delivery agent assignments, and order handling, making it ideal for learning core Java programming concepts while exploring OOP design.
 
 ---
+## Features
 
 ## **✨ Key Features**
 
