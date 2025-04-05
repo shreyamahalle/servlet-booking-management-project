@@ -12,22 +12,18 @@
 </head>
 <body>
 <h1>Booking Management System</h1>
-<form action="/servlet-booking-management-project/CustomerController" method="POST">
+<form action="/servlet-booking-management-project/orderController" method="POST">
     <label> id: </label>
 	<input type = "textbox" id ="id" name="id"/>
 	<br/>
-	<label> Name: </label>
-	<input type = "textbox" id ="name" name="name"/>
+	<label> type: </label>
+	<input type = "textbox" id ="type" name="type"/>
 	<br/>
-	<label>city: </label>
-	<input type = "textbox" id ="city" name="city"/>
+	<label> note: </label>
+	<input type = "textbox" id ="note" name="note"/>
 	<br/>
-	<label>Age: </label>
-	<input type = "textbox" id ="age" name="age"/>
-	<br/>
-	<label>mobileNo : </label>
-	<input type = "textbox" id ="mobileNo" name="mobileNo"/>
-	<br/>
+	<label> paymentMethod: </label>
+	<input type = "textbox" id ="paymentMethod" name="paymentMethod"/>
 	<input type = "submit" value="Save Data"/>
 	 <input type="reset" value="Clear">
 </form>

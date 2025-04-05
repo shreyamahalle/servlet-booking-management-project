@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Booking Management System</h1>
-<form action="/servlet-booking-management-project/CustomerController" method="POST">
+<form action="/servlet-booking-management-project/DeliveryAgentController" method="POST">
     <label> id: </label>
 	<input type = "textbox" id ="id" name="id"/>
 	<br/>
@@ -21,9 +21,6 @@
 	<br/>
 	<label>city: </label>
 	<input type = "textbox" id ="city" name="city"/>
-	<br/>
-	<label>Age: </label>
-	<input type = "textbox" id ="age" name="age"/>
 	<br/>
 	<label>mobileNo : </label>
 	<input type = "textbox" id ="mobileNo" name="mobileNo"/>
