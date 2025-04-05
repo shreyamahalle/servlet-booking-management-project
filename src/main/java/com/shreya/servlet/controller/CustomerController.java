@@ -13,7 +13,7 @@ public class CustomerController extends HttpServlet {
     private final CustomerService customerService = new CustomerService();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("--------------- inside the doGet() method ---------------");
 
         String name = request.getParameter("name");
@@ -25,9 +25,9 @@ public class CustomerController extends HttpServlet {
     }
 
     @Override
-    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void service(HttpServletRequest request, HttpServletResponse response) throws  IOException, ServletException {
         System.out.println("--------------- inside the service() method ---------------");
-        super.service(request, response);
+        super.service(request,response);
     }
 
     @Override
