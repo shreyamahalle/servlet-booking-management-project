@@ -18,7 +18,7 @@ public class OrderRepository {
         }
     }
 
-    public void insertOrder(Order order) throws SQLException {
+    public boolean insertOrder(Order order) throws SQLException {
         this.initConnection();
         String query = "insert into orderr values (?, ?, ?, ?)";
         try {
@@ -41,6 +41,7 @@ public class OrderRepository {
                 }
             }
         }
+        return false;
     }
 
     public List<Order> retrieveOrders() {

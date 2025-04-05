@@ -25,7 +25,11 @@ public class OrderController extends HttpServlet {
         System.out.println("--------------- inside the doGet() method ---------------");
         List<Order> orderList = new ArrayList<>();
 
-        orderList = orderService.retrieveOrders();
+        try {
+            orderList = orderService.retrieveOrders();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();

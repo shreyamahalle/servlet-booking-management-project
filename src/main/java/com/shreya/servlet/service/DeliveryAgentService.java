@@ -12,9 +12,9 @@ public class DeliveryAgentService implements DeliveryAgentServiceInterface {
 
     public boolean insertDeliveryAgent(DeliveryAgent deliveryAgent)throws SQLException {
         if(deliveryAgentRepository.insertDeliveryAgent(deliveryAgent)){
-            System.out.println("Customer created successfully");
+            System.out.println("DeliveryAgent created successfully");
         }else {
-            System.out.println("failed to created Customer");
+            System.out.println("failed to created DeliveryAgent");
             return false;
         }
         return true;
