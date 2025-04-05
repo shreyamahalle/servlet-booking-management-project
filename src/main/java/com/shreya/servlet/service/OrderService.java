@@ -19,8 +19,9 @@ public class OrderService implements OrderNumberService {
         return orderRepository.retrieveOrders();
     }
 
-    public static void insertOrder(Order order) throws SQLException {
-        orderRepository.addOrder(order);
+    public static boolean insertOrder(Order order) throws SQLException {
+        orderRepository.insertOrder(order);
+        return false;
     }
 
     public static void Order(Order order) throws SQLException {

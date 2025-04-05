@@ -19,7 +19,7 @@ public class RestaurantRepository {
         }
     }
 
-    public void addRestaurant(Restaurant restaurant) throws SQLException {
+    public void insertRestaurant(Restaurant restaurant) throws SQLException {
         this.initConnection();
         String query = "insert into restaurant values (?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {

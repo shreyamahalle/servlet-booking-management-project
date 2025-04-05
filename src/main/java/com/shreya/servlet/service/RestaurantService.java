@@ -1,6 +1,5 @@
 package com.shreya.servlet.service;
 
-import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.model.Restaurant;
 import com.shreya.servlet.repository.RestaurantRepository;
 
@@ -17,8 +16,9 @@ public class RestaurantService {
         return restaurantRepository.retrieveRestaurants();
     }
 
-    public static void insertRestaurant(Restaurant restaurant) throws SQLException {
-        restaurantRepository.addRestaurant(restaurant);
+    public static boolean insertRestaurant(Restaurant restaurant) throws SQLException {
+        restaurantRepository.insertRestaurant(restaurant);
+        return false;
     }
 
     public static void Restaurant(Restaurant restaurant) {
@@ -95,5 +95,9 @@ public class RestaurantService {
         } catch (Exception e) {
             System.out.println("Invalid input type correct data");
         }
+    }
+
+    public List<Restaurant> retrieveDeliveryAgents() {
+        return List.of();
     }
 }

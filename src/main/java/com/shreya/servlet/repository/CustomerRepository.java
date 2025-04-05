@@ -1,184 +1,114 @@
 package com.shreya.servlet.repository;
+
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.service.ConnectionService;
+
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class CustomerRepository {
 
-    //private static Connection connection = null;
-    private Connection connection = null;
+    public boolean insertCustomer(Customer customer) {
+        String query = "INSERT INTO customer (id, name, city, mobileNo, age) VALUES (?, ?, ?, ?, ?)";
 
+        try (Connection connection = new ConnectionService().getConnection();  // GET connection here
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
-    private void initConnection() throws SQLException {
-        if (connection == null || connection.isClosed()) {
-            connection = new ConnectionService().getConnection();
-        }
-    }
-
-    public boolean insertCustomer(Customer customer) throws SQLException {
-        this.initConnection();
-        String query = "insert into customer values (?, ?, ?, ?, ?)";
-
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, customer.getId());
             preparedStatement.setString(2, customer.getName());
             preparedStatement.setString(3, customer.getCity());
             preparedStatement.setInt(4, customer.getMobileNo());
-            preparedStatement.setInt(4, customer.getAge());
-            System.out.println("inserting customer data to table: " + customer);
+            preparedStatement.setInt(5, customer.getAge());
 
+            return preparedStatement.executeUpdate() > 0;
 
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
-
-        } finally { //close connection
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    System.err.println("Error closing connection: " + e.getMessage());
-                }
-            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error inserting customer: " + e.getMessage(), e);
         }
-        return false;
     }
 
     public List<Customer> retrieveCustomers() {
         List<Customer> customers = new ArrayList<>();
         String query = "SELECT * FROM customer";
 
-        try {
-            this.initConnection();
+        try (Connection connection = new ConnectionService().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                String city = resultSet.getString("city");
-                int mobileNo = resultSet.getInt("mobileNo");
-                int age = resultSet.getInt("age");
-
-                Customer customer = new Customer(id, name, city, mobileNo, age);
+                Customer customer = new Customer(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("city"),
+                        resultSet.getInt("mobileNo"),
+                        resultSet.getInt("age")
+                );
                 customers.add(customer);
             }
+
         } catch (SQLException e) {
-            System.err.println("SQL error: " + e.getMessage());
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    System.err.println("Error closing connection: " + e.getMessage());
-                }
-            }
+            System.err.println("Error retrieving customers: " + e.getMessage());
         }
+
         return customers;
     }
 
     public Customer retrieveCustomer(int id, String name) {
+        String query = "SELECT * FROM customer WHERE id = ? AND name = ?";
         Customer customer = null;
-        String sql = "SELECT * FROM customer WHERE id = ? AND name = ?";
 
-        try {
-            this.initConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        try (Connection connection = new ConnectionService().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
             preparedStatement.setInt(1, id);
             preparedStatement.setString(2, name);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                String city = resultSet.getString("city");
-                int mobileNo = resultSet.getInt("mobileNo");
-                int age = resultSet.getInt("age");
-                customer = new Customer(id, name, city, mobileNo, age);
+                customer = new Customer(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("city"),
+                        resultSet.getInt("mobileNo"),
+                        resultSet.getInt("age")
+                );
             }
+
         } catch (SQLException e) {
-            System.err.println("SQL error: " + e.getMessage());
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    System.err.println("Error closing connection: " + e.getMessage());
-                }
-            }
+            System.err.println("Error retrieving customer: " + e.getMessage());
         }
+
         return customer;
     }
 
+    public boolean deleteCustomer(int id) {
+        String query = "DELETE FROM customer WHERE id = ?";
 
-    public boolean deleteCustomer(int id) throws SQLException {
-        String sql = "DELETE FROM Customer WHERE id = ?";
+        try (Connection connection = new ConnectionService().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
-        try {
-            this.initConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             return preparedStatement.executeUpdate() > 0;
+
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    System.err.println("connection is closed: " + e.getMessage());
-                }
-            }
+            throw new RuntimeException("Error deleting customer: " + e.getMessage(), e);
         }
     }
 
-    public boolean updateCustomer(int id, String name) throws SQLException {
-        Customer customer = null;
-        try {
-            this.initConnection();
-            Statement statement = connection.createStatement();
-            String sql = "UPDATE Customer SET name = ? WHERE id = ?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-                // Set the parameters for the prepared statement
-                preparedStatement.setString(1, name);
-                preparedStatement.setInt(2, id);
+    public boolean updateCustomer(int id, String name) {
+        String query = "UPDATE customer SET name = ? WHERE id = ?";
 
-                // Execute the update query and return true if the update was successful
-                return preparedStatement.executeUpdate() > 0;  // Returns true if at least one row was updated
-            }
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    System.err.println("Error closing connection: " + e.getMessage());
-                }
-            }
+        try (Connection connection = new ConnectionService().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setString(1, name);
+            preparedStatement.setInt(2, id);
+
+            return preparedStatement.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating customer: " + e.getMessage(), e);
         }
     }
-
-
-    Set<Customer> customers = new HashSet<>();
-
-    public boolean createCustomer(Customer customer) {
-
-        customers.add(customer);
-        return false;
-    }
-
-    public void displayCustomers(Customer customer) {
-        customers.remove(customer);
-    }
-
-    public void displayCustomerToBeClosed(int id) {
-        Customer customerToBeClosed = null;
-        for (Customer customer : customers) {
-            if (customer.getId() == id) {
-                customerToBeClosed = customer;
-            }
-        }
-        customers.remove(customerToBeClosed);
-    }
-
 }

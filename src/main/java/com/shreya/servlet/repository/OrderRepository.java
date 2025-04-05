@@ -18,7 +18,7 @@ public class OrderRepository {
         }
     }
 
-    public void addOrder(Order order) throws SQLException {
+    public void insertOrder(Order order) throws SQLException {
         this.initConnection();
         String query = "insert into orderr values (?, ?, ?, ?)";
         try {
