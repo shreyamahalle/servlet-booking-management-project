@@ -1,4 +1,5 @@
 package com.shreya.servlet.service;
+
 import com.shreya.servlet.model.DeliveryAgent;
 import com.shreya.servlet.repository.DeliveryAgentRepository;
 
@@ -10,16 +11,17 @@ public class DeliveryAgentService implements DeliveryAgentServiceInterface {
     private static final DeliveryAgentRepository deliveryAgentRepository = new DeliveryAgentRepository();
 
 
-    public boolean insertDeliveryAgent(DeliveryAgent deliveryAgent)throws SQLException {
-        if(deliveryAgentRepository.insertDeliveryAgent(deliveryAgent)){
+    public boolean insertDeliveryAgent(DeliveryAgent deliveryAgent) throws SQLException {
+        if (deliveryAgentRepository.insertDeliveryAgent(deliveryAgent)) {
             System.out.println("DeliveryAgent created successfully");
-        }else {
+        } else {
             System.out.println("failed to created DeliveryAgent");
             return false;
         }
         return true;
     }
-    public List<DeliveryAgent> retrieveDeliveryAgents()throws  SQLException{
+
+    public List<DeliveryAgent> retrieveDeliveryAgents() throws SQLException {
         return deliveryAgentRepository.retrieveDeliveryAgents();
     }
 
@@ -35,54 +37,7 @@ public class DeliveryAgentService implements DeliveryAgentServiceInterface {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //    private static final CustomerRepository customerRepository = new CustomerRepository();
+//    private static final CustomerRepository customerRepository = new CustomerRepository();
 //    public static Map<Integer, DeliveryAgent> deliveryAgents = new HashMap<>();
 //    private final Scanner sc = new Scanner(System.in);
 //    private static final DeliveryAgent deliveryAgent = new DeliveryAgent();
@@ -168,10 +123,10 @@ public class DeliveryAgentService implements DeliveryAgentServiceInterface {
 //
 //        try {
 //
-////         Set<Map.Entry<Integer,DeliveryAgent>> entrySet = deliveryAgents.entrySet();
-////         for(Map.Entry<Integer,DeliveryAgent>customerEntry : entrySet){
-////            System.out.println("Customer Info: " + deliveryAgents );
-////          }
+/// /         Set<Map.Entry<Integer,DeliveryAgent>> entrySet = deliveryAgents.entrySet();
+/// /         for(Map.Entry<Integer,DeliveryAgent>customerEntry : entrySet){
+/// /            System.out.println("Customer Info: " + deliveryAgents );
+/// /          }
 //
 //            //java 8 features forEach loop
 //            deliveryAgents.forEach((id, deliveryAgents) -> System.out.println("deliveryAgents Id " + id + " = deliveryAgents info " + deliveryAgents));

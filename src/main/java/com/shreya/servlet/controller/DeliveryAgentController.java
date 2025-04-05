@@ -1,4 +1,5 @@
 package com.shreya.servlet.controller;
+
 import com.shreya.servlet.model.DeliveryAgent;
 import com.shreya.servlet.service.CustomerService;
 import com.shreya.servlet.service.DeliveryAgentService;
@@ -95,15 +96,6 @@ public class DeliveryAgentController extends HttpServlet {
         System.out.println("--------------- inside the destroy() method ---------------");
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 //    private final DeliveryAgent deliveryAgent = new DeliveryAgent();

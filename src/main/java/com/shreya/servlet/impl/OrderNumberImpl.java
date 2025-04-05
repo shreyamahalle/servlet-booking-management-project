@@ -1,5 +1,7 @@
 package com.shreya.servlet.impl;
-import  com.shreya.servlet.service.OrderNumberService;
+
+import com.shreya.servlet.service.OrderNumberService;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class OrderNumberImpl implements OrderNumberService {
@@ -12,5 +14,5 @@ public class OrderNumberImpl implements OrderNumberService {
 //    @Override
 //    public void displayOrder() {
 
-    }
+}
 

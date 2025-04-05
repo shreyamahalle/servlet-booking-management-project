@@ -1,7 +1,9 @@
 package com.shreya.servlet.impl;
-import  com.shreya.servlet.model.Order;
-import  com.shreya.servlet.repository.OrderRepository;
-import  com.shreya.servlet.service.OrderNumberService;
+
+import com.shreya.servlet.model.Order;
+import com.shreya.servlet.repository.OrderRepository;
+import com.shreya.servlet.service.OrderNumberService;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,14 +13,16 @@ public class CustomerImpl implements OrderNumberService {
     @Override
     public void createOrderNo() {
     }
+
     OrderRepository orderRepository = new OrderRepository();
-    HashMap<Integer,Order> orders = new HashMap<>();
+    HashMap<Integer, Order> orders = new HashMap<>();
     Scanner sc = new Scanner(System.in);
 
-    public void printCustomer(){
+    public void printCustomer() {
         //System.out.println(order);
     }
-    public Order createOrder(){
+
+    public Order createOrder() {
         Order order = new Order();
         orderRepository.createOrder(order);
         orderRepository.displayOrder(order);
@@ -42,20 +46,19 @@ public class CustomerImpl implements OrderNumberService {
             order.setNote(note);
             order.setType(type);
             orders.put(1, order);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input type correct data");
         }
         return order;
     }
-    public void displayOrder(){
+
+    public void displayOrder() {
         try {
             Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
             for (Map.Entry<Integer, Order> customerEntry : entrySet) {
                 System.out.println("Customer Info: " + orders);
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input type correct data");
         }
     }

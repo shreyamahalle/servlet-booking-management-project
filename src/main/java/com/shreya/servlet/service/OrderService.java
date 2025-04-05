@@ -1,22 +1,25 @@
 package com.shreya.servlet.service;
+
 import com.shreya.servlet.model.Order;
 import com.shreya.servlet.repository.OrderRepository;
+
 import java.sql.SQLException;
 import java.util.List;
 
 public class OrderService implements OrderNumberService {
     private static final OrderRepository orderRepository = new OrderRepository();
 
-    public boolean insertOrder(Order order)throws SQLException {
-        if(orderRepository.insertOrder(order)){
+    public boolean insertOrder(Order order) throws SQLException {
+        if (orderRepository.insertOrder(order)) {
             System.out.println("Order created successfully");
-        }else {
+        } else {
             System.out.println("failed to created Order");
             return false;
         }
         return true;
     }
-    public List<Order> retrieveOrders()throws  SQLException{
+
+    public List<Order> retrieveOrders() throws SQLException {
         return orderRepository.retrieveOrders();
     }
 
@@ -25,20 +28,6 @@ public class OrderService implements OrderNumberService {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //
@@ -129,10 +118,10 @@ public class OrderService implements OrderNumberService {
 //
 //    public void displayOrder() {
 //        try {
-////            Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
-////            for (Map.Entry<Integer, Order> customerEntry : entrySet) {
-////                System.out.println("Customer Info: " + orders);
-////            }
+/// /            Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
+/// /            for (Map.Entry<Integer, Order> customerEntry : entrySet) {
+/// /                System.out.println("Customer Info: " + orders);
+/// /            }
 //
 //            //java 8 features forEach loop..
 //            orders.forEach((Id, orders) -> System.out.println("orderId " + Id + " = order info " + orders));

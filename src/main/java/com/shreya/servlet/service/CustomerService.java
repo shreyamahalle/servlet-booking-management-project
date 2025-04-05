@@ -1,4 +1,5 @@
 package com.shreya.servlet.service;
+
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.repository.CustomerRepository;
 
@@ -10,21 +11,20 @@ public class CustomerService {
 
     private static final CustomerRepository customerRepository = new CustomerRepository();
 
-    public boolean insertCustomer(Customer customer)throws SQLException {
-        if(customerRepository.insertCustomer(customer)){
+    public boolean insertCustomer(Customer customer) throws SQLException {
+        if (customerRepository.insertCustomer(customer)) {
             System.out.println("Customer created successfully");
-        }else {
+        } else {
             System.out.println("failed to created Customer");
             return false;
         }
         return true;
     }
-       public List<Customer> retrieveCustomers()throws  SQLException{
+
+    public List<Customer> retrieveCustomers() throws SQLException {
         return customerRepository.retrieveCustomers();
-       }
+    }
 }
-
-
 
 
 //    Scanner sc = new Scanner(System.in);
@@ -109,9 +109,9 @@ public class CustomerService {
 //    public void displayCustomers() {
 //        try {
 //            //Set<Map.Entry<Integer, Customer>> entrySet = customers.entrySet();
-////            for (Map.Entry<Integer, Customer> customerEntry : entrySet) {
-////                System.out.println("Customer Info: " + customers);
-////            }
+/// /            for (Map.Entry<Integer, Customer> customerEntry : entrySet) {
+/// /                System.out.println("Customer Info: " + customers);
+/// /            }
 //            //java 8 features forEach loop ...
 //            customers.forEach((customerId, customers) -> System.out.println("Customer Id " + customerId + " = Customer Info " + customers));
 //

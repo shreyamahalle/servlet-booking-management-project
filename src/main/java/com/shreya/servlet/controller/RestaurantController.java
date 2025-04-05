@@ -1,4 +1,5 @@
 package com.shreya.servlet.controller;
+
 import com.shreya.servlet.exception.CustomerException;
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.model.Restaurant;
@@ -94,18 +95,6 @@ public class RestaurantController extends HttpServlet {
         System.out.println("--------------- inside the destroy() method ---------------");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //
