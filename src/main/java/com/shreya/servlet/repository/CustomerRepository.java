@@ -9,7 +9,9 @@ import java.util.Set;
 
 public class CustomerRepository {
 
-    private static Connection connection = null;
+    //private static Connection connection = null;
+    private Connection connection = null;
+
 
     private void initConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
@@ -17,7 +19,7 @@ public class CustomerRepository {
         }
     }
 
-    public void addCustomer(Customer customer) throws SQLException {
+    public boolean insertCustomer(Customer customer) throws SQLException {
         this.initConnection();
         String query = "insert into customer values (?, ?, ?, ?, ?)";
 
@@ -42,6 +44,7 @@ public class CustomerRepository {
                 }
             }
         }
+        return false;
     }
 
     public List<Customer> retrieveCustomers() {
@@ -50,8 +53,8 @@ public class CustomerRepository {
 
         try {
             this.initConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
 
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");

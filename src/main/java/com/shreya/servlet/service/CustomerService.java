@@ -1,17 +1,27 @@
 package com.shreya.servlet.service;
+import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.repository.CustomerRepository;
+
+import java.sql.SQLException;
+import java.util.List;
 
 
 public class CustomerService {
 
     private static final CustomerRepository customerRepository = new CustomerRepository();
 
-    public String greet(String name) {
-        if(name.isEmpty()){
-            return  "hello all";
+    public boolean insertCustomer(Customer customer)throws SQLException {
+        if(customerRepository.insertCustomer(customer)){
+            System.out.println("Customer created successfully");
+        }else {
+            System.out.println("failed to created Customer");
+            return false;
         }
-        return "hello " + name;
+        return true;
     }
+       public List<Customer> retrieveCustomers()throws  SQLException{
+        return customerRepository.retrieveCustomers();
+       }
 }
 
 
