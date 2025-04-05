@@ -1,7 +1,5 @@
 package com.shreya.servlet.service;
-
 import com.shreya.servlet.model.Order;
-
 import java.util.Scanner;
 
 public class OrderMultipleInheritanceService extends Order {

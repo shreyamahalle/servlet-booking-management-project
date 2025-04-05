@@ -1,5 +1,4 @@
 package com.shreya.servlet.service;
-import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.model.DeliveryAgent;
 import com.shreya.servlet.repository.DeliveryAgentRepository;
 
