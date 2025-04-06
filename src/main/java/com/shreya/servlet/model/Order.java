@@ -13,5 +13,4 @@ public class Order {
     private String type;
     private String note;
     private String paymentMethod;
-
 }

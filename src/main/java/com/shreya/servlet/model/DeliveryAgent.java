@@ -16,5 +16,4 @@ public class DeliveryAgent {
     private String name;
     private String city;
     public int mobileNo;
-
 }

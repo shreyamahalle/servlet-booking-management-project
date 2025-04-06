@@ -13,5 +13,4 @@ public class Restaurant {
     private String name;
     private String City;
     private String Area;
-
 }
