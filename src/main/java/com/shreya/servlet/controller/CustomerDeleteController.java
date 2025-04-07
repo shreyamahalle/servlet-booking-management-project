@@ -10,34 +10,6 @@ import java.sql.SQLException;
 public class CustomerDeleteController extends HttpServlet {
 
     private final CustomerService customerService = new CustomerService();
-
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        System.out.println("------ inside doPost() of DeleteController ------");
-//
-//        int id = Integer.parseInt(request.getParameter("id"));
-//
-//        boolean isDeleted = false;
-//        try {
-//            isDeleted = customerService.deleteCustomer(id);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        response.setContentType("text/html");
-//        PrintWriter out = response.getWriter();
-//        out.println("<html><body>");
-//
-//        if (isDeleted) {
-//            out.println("<h2>Customer deleted successfully!</h2>");
-//        } else {
-//            out.println("<h2>Customer not found / could not be deleted.</h2>");
-//        }
-//
-//        out.println("</body></html>");
-//    }
-
-    // CustomerDeleteController.java
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idStr = request.getParameter("id");  // This must not be null
