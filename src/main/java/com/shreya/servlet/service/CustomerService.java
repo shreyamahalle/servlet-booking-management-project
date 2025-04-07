@@ -11,20 +11,53 @@ public class CustomerService {
 
     private static final CustomerRepository customerRepository = new CustomerRepository();
 
-    public boolean insertCustomer(Customer customer) throws SQLException {
-        if (customerRepository.insertCustomer(customer)) {
-            System.out.println("Customer created successfully");
-        } else {
-            System.out.println("failed to created Customer");
-            return false;
+        public boolean insertCustomer(Customer customer) throws SQLException {
+            return customerRepository.insertCustomer(customer);
         }
-        return true;
+
+        public boolean updateCustomer(int id, String name) throws SQLException {
+            return customerRepository.updateCustomer(id, name);
+        }
+
+        public boolean deleteCustomer(int id) throws SQLException {
+            return customerRepository.deleteCustomer(id);
+        }
+
+        public Customer retrieveCustomer(int id, String name) throws SQLException {
+            return customerRepository.retrieveCustomer(id, name);
+        }
+
+        public List<Customer> retrieveCustomers() throws SQLException {
+            return customerRepository.retrieveCustomers();
+        }
     }
 
-    public List<Customer> retrieveCustomers() throws SQLException {
-        return customerRepository.retrieveCustomers();
-    }
-}
+
+//    public boolean insertCustomer(Customer customer) throws SQLException {
+//        if (customerRepository.insertCustomer(customer)) {
+//            System.out.println("Customer created successfully");
+//        } else {
+//            System.out.println("failed to created Customer");
+//            return false;
+//        }
+//        return true;
+//    }
+//    public static void deleteCustomer() {
+//
+//        if (customerRepository.deleteCustomer(1)) {
+//            System.out.println("Customer deleted successfully!");
+//        } else {
+//            System.out.println("Failed to delete Customer.");
+//        }
+//    }
+//    public List<Customer> retrieveCustomers() throws SQLException {
+//        return customerRepository.retrieveCustomers();
+//    }
+//}
+//
+
+
+
 
 
 //    Scanner sc = new Scanner(System.in);

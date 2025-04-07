@@ -30,6 +30,8 @@
 	<br/>
 	<input type = "submit" value="Save Data"/>
 	 <input type="reset" value="Clear">
+	     <form action="servlet-booking-management-project/CustomerDeleteController" method="POST" class="customer-form">
+
 </form>
 </body>
 </html>
