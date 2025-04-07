@@ -11,20 +11,24 @@
 - [Contributing](#contributing)
 - [Contact](#contact)
 
-
-
 # **servlet-booking-management-project**
 
-Welcome to the **servlet-booking-management-project**, a simple yet powerful Java application that simulates a booking management system. This project uses Object-Oriented Programming (OOP) principles to create a seamless experience for managing customers, delivery agents, orders, and restaurants.
+Welcome to the **servlet-booking-management-project**, a simple yet powerful Java application that simulates a booking
+management system. This project uses Object-Oriented Programming (OOP) principles to create a seamless experience for
+managing customers, delivery agents, orders, and restaurants.
 
 ---
+
 ## Introduction
 
 ## **🚀 Project Overview**
 
-The **servlet-booking-management-project** is a practical demonstration of a booking management system with real-world interactions. It provides functionality for booking management, delivery agent assignments, and order handling, making it ideal for learning core Java programming concepts while exploring OOP design.
+The **servlet-booking-management-project** is a practical demonstration of a booking management system with real-world
+interactions. It provides functionality for booking management, delivery agent assignments, and order handling, making
+it ideal for learning core Java programming concepts while exploring OOP design.
 
 ---
+
 ## Features
 
 ## **✨ Key Features**
@@ -32,10 +36,12 @@ The **servlet-booking-management-project** is a practical demonstration of a boo
 - **📅 Customer and Restaurant Booking Management**: Effortlessly handle customer bookings and restaurant data.
 - **🚚 Delivery Agent Simulation**: Assign delivery agents based on location and availability.
 - **📦 Dynamic Order Handling**: Add, track, and manage orders through their entire lifecycle.
-- **💻 Seamless Java Integration**: Clean integration of Java models for each entity (Customer, Delivery Agent, Order, Restaurant).
+- **💻 Seamless Java Integration**: Clean integration of Java models for each entity (Customer, Delivery Agent, Order,
+  Restaurant).
 - **🔍 Easy-to-Follow Structure**: Well-documented, clean code for learning and demonstration.
 
 ---
+
 # Technologies Used
 
 ## **🛠️ Technologies Used**
@@ -49,7 +55,7 @@ This project is built with the following technologies:
 - **MySQL**: A reliable relational database system used to store customer, restaurant, delivery agent, and order data.
 - **HTML5/CSS3:** Frontend technologies.
 - **Git**: For version control and collaboration.
-  
+
 ---
 
 ## Getting Started
@@ -57,6 +63,7 @@ This project is built with the following technologies:
 ## **💡 Installation and Setup**
 
 ### **Prerequisites**
+
 Before you begin, ensure you have the following:
 
 - **Java Development Kit (JDK) 21**: Install the latest JDK for optimal performance.
@@ -68,34 +75,35 @@ Before you begin, ensure you have the following:
 
 ## **💡Steps to Get Started**
 
-1. **Clone the Repository**: 
+1. **Clone the Repository**:
 
    ```bash
    git clone git@github.com:shreyamahalle/servlet-booking-management-project.git
 
-   
 ## 2. **Navigate to the Project Directory:**
+
 - cd maven-booking-management-project
 
 ## 3. **Open the Project in Your Preferred IDE:**
+
 - Launch your IDE (IntelliJ, Eclipse, etc.), and open the cloned repository.
 
 ## 4. **Set up the MySQL Database:**
+
 - CREATE DATABASE booking_management;
-   USE booking_management;
+  USE booking_management;
 
 ## 5. **MySQL Database Setup**
 
 - To set up the database and create the necessary tables, run the following SQL queries:
--- Insert sample data into the Customer table
-INSERT INTO Customer (name, username, mobileNo, city, area)
-VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
+  -- Insert sample data into the Customer table
+  INSERT INTO Customer (name, username, mobileNo, city, area)
+  VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
 
+## 6. **Configure Your MySQL Connection:**
 
- ## 6. **Configure Your MySQL Connection:**
-   
 - In your project configuration (application.properties), set the MySQL database connection details.
-  
+
 - Example application.properties:
 
 - spring.datasource.url=jdbc:mysql://localhost:3306/booking_management
@@ -103,7 +111,7 @@ VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
 - spring.datasource.password=your_password
 - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
- ## 7. **Compile and Run the Application:**
+## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.
 
@@ -117,11 +125,11 @@ VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
 
 ## 9. **Deploy to Tomcat:**
 
-   Copy the generated WAR file from the `target` directory to the `webapps` directory of your Tomcat server.
+Copy the generated WAR file from the `target` directory to the `webapps` directory of your Tomcat server.
 
 ## 10. **Start Tomcat:**
 
-   Start the Tomcat server and access the application at `http://localhost:8080/customer-controller`.
+Start the Tomcat server and access the application at `http://localhost:8080/customer-controller`.
 
 ## Usage
 
@@ -139,6 +147,7 @@ For any questions or suggestions, feel free to open an issue or contact me direc
 ---
 
 *This README was generated by [Shreya Mahalle](https://github.com/shreyamahalle).*
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
@@ -146,12 +155,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## **Code Structure** ## 
 
 ## **Packages Structure**
+
 - com.booking.using.dowhile: Contains the main application logic (BookingDemoDoWhile.java).
 - com.booking.using.dowhile.model: Includes the model classes:
-  - Customer.java
-  - DeliveryAgent.java
-  - Order.java
-  - Restaurant.java
+    - Customer.java
+    - DeliveryAgent.java
+    - Order.java
+    - Restaurant.java
 - package names: com.booking.Customer.model
 - package names: com.booking.DeliveryAgent.model
 - package names: com.booking.Order.model
@@ -159,38 +169,39 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - package names: com.booking.BookingDemoDoWhile.service
 
 ## **Functionality**
+
 1. **Customer**
 2. **DeliveryAgent**
 3. **Order**
 4. **Restaurant**
 
 ## **🔧 Core Functionality**
+
 1. Customer Management
-Allows you to create and manage customer information such as name, username, contact details, and address.
+   Allows you to create and manage customer information such as name, username, contact details, and address.
 
 2. Delivery Agent Management
-Adds delivery agents, assigns them to orders, and tracks their delivery status.
+   Adds delivery agents, assigns them to orders, and tracks their delivery status.
 
 3. Order Management
-Manages the creation, display, and tracking of customer orders from placement to delivery.
+   Manages the creation, display, and tracking of customer orders from placement to delivery.
 
 4. Restaurant Management
-Registers new restaurants, displays restaurant details, and associates them with orders.
-
-
+   Registers new restaurants, displays restaurant details, and associates them with orders.
 
 ## **📝 Database Schema (POJO Classes)**
-| **Entity**          | **Attributes** |
-|---------------------|----------------------------------------------------------|
-| **Customer**           | user id, name, username,monbileNo,city,area |
-| **DeliveryAgent**          | id, name, city, mobileNo |
-| **Order**         | id, name, city, mobileNo |
-| **Restaurant**        |registerNo, name, City, Area |
+
+| **Entity**        | **Attributes**                              |
+|-------------------|---------------------------------------------|
+| **Customer**      | user id, name, username,monbileNo,city,area |
+| **DeliveryAgent** | id, name, city, mobileNo                    |
+| **Order**         | id, name, city, mobileNo                    |
+| **Restaurant**    | registerNo, name, City, Area                |
 
 ---
 
+# Class Diagram
 
-#  Class Diagram
 ```mermaid
 ---
 title: booking management project
