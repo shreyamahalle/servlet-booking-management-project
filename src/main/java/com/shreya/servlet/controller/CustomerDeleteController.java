@@ -1,4 +1,5 @@
 package com.shreya.servlet.controller;
+
 import com.shreya.servlet.service.CustomerService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 public class CustomerDeleteController extends HttpServlet {
 
     private final CustomerService customerService = new CustomerService();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idStr = request.getParameter("id");  // This must not be null

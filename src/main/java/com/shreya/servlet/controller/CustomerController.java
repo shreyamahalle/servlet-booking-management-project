@@ -62,42 +62,6 @@ public class CustomerController extends HttpServlet {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //package com.shreya.servlet.controller;
 //
 //import com.shreya.servlet.model.Customer;
@@ -210,37 +174,37 @@ public class CustomerController extends HttpServlet {
 //
 //
 //
-////        List<Customer> customerList = new ArrayList<>();
-////        try {
-////            customerList = customerService.retrieveCustomers();
-////        } catch (SQLException e) {
-////            throw new RuntimeException(e);
-////        }
-////            response.setContentType("text/html");
-////            PrintWriter out = response.getWriter();
-////            out.println("<html><body>");
-////            out.println("<h1>Student Details</h1>");
-////            out.println("<table border=1>");
-////            out.println("<tr>");
-////            out.println("<th>id</th>");
-////            out.println("<th>name</th>");
-////            out.println("<th>age</th>");
-////            out.println("<th>city</th>");
-////            out.println("<th>mobileNo</th>");
-////            out.println("</tr>");
-////            customerList.parallelStream().forEach(customer -> {
-////                out.println("<tr>");
-////                out.println("<td>" + customer.getId() + "</td>");
-////                out.println("<td>" + customer.getName() + "</td>");
-////                out.println("<td>" + customer.getCity() + "</td>");
-////                out.println("<td>" + customer.getAge() + "</td>");
-////                out.println("<td>" + customer.getMobileNo() + "</td>");
-////                out.println("</tr>");
-////            });
-////            out.println("</table>");
-////            out.println("</body></html>");
-////        }
-////    }
+/// /        List<Customer> customerList = new ArrayList<>();
+/// /        try {
+/// /            customerList = customerService.retrieveCustomers();
+/// /        } catch (SQLException e) {
+/// /            throw new RuntimeException(e);
+/// /        }
+/// /            response.setContentType("text/html");
+/// /            PrintWriter out = response.getWriter();
+/// /            out.println("<html><body>");
+/// /            out.println("<h1>Student Details</h1>");
+/// /            out.println("<table border=1>");
+/// /            out.println("<tr>");
+/// /            out.println("<th>id</th>");
+/// /            out.println("<th>name</th>");
+/// /            out.println("<th>age</th>");
+/// /            out.println("<th>city</th>");
+/// /            out.println("<th>mobileNo</th>");
+/// /            out.println("</tr>");
+/// /            customerList.parallelStream().forEach(customer -> {
+/// /                out.println("<tr>");
+/// /                out.println("<td>" + customer.getId() + "</td>");
+/// /                out.println("<td>" + customer.getName() + "</td>");
+/// /                out.println("<td>" + customer.getCity() + "</td>");
+/// /                out.println("<td>" + customer.getAge() + "</td>");
+/// /                out.println("<td>" + customer.getMobileNo() + "</td>");
+/// /                out.println("</tr>");
+/// /            });
+/// /            out.println("</table>");
+/// /            out.println("</body></html>");
+/// /        }
+/// /    }
 //
 //
 ////    CustomerRepository customerRepository = new CustomerRepository();
