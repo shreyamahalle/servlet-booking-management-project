@@ -1,11 +1,8 @@
 package com.shreya.servlet.controller;
-
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.service.CustomerService;
-
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.ServletException;
 
 import java.io.IOException;
 import java.io.PrintWriter;
