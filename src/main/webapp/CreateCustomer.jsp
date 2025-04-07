@@ -30,8 +30,10 @@
 	<br/>
 	<input type = "submit" value="Save Data"/>
 	 <input type="reset" value="Clear">
-	     <form action="servlet-booking-management-project/CustomerDeleteController" method="POST" class="customer-form">
-
+<br>
+<div>
+    <button onclick="location.href='index.html'">Back to Home</button>
+</div>
 </form>
 </body>
 </html>

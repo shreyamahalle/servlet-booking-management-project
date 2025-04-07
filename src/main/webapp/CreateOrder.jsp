@@ -26,6 +26,10 @@
 	<input type = "textbox" id ="paymentMethod" name="paymentMethod"/>
 	<input type = "submit" value="Save Data"/>
 	 <input type="reset" value="Clear">
+	 <br>
+     <div>
+         <button onclick="location.href='index.html'">Back to Home</button>
+     </div>
 </form>
 </body>
 </html>

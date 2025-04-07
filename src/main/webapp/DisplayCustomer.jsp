@@ -29,6 +29,5 @@
         </tbody>
     </table>
 
-    <a href="http://localhost:8080/servlet-booking-management-project">Go to Home</a>
 </body>
 </html>
