@@ -2,6 +2,7 @@ package com.shreya.servlet.controller;
 
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.service.CustomerService;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.WebServlet;
 
@@ -15,13 +16,22 @@ public class CustomerController extends HttpServlet {
     private final CustomerService customerService = new CustomerService();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
         out.println("<html><body><h1>Customer List</h1><table border='1'>");
         out.println("<tr><th>ID</th><th>Name</th><th>City</th><th>Mobile</th><th>Age</th></tr>");
 
         try {
+//            List<Customer> customerList = customerService.retrieveCustomers();
+//            req.setAttribute("customerList", customerList);
+//            req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            req.setAttribute("errorMessage", "Something went wrong: " + e.getMessage());
+//            req.getRequestDispatcher("/error.jsp").forward(req, res);
+//
+//        }
             List<Customer> list = customerService.retrieveCustomers();
             for (Customer c : list) {
                 out.println("<tr><td>" + c.getId() + "</td><td>" + c.getName() + "</td><td>"
