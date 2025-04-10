@@ -11,8 +11,8 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>city</th>
-                <th>mobileNo</th>
+                <th>City</th>
+                <th>Mobile No</th>
                 <th>Age</th>
             </tr>
         </thead>
@@ -20,14 +20,13 @@
             <c:forEach var="customer" items="${customerList}">
                 <tr>
                     <td>${customer.id}</td>
-                    <td>${customer.Name}</td>
+                    <td>${customer.name}</td>  <!-- use lowercase .name -->
                     <td>${customer.city}</td>
-                    <td>${customer.mobileNO}</td>
+                    <td>${customer.mobileNo}</td>
                     <td>${customer.age}</td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-
 </body>
 </html>

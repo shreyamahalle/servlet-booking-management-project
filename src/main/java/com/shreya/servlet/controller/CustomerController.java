@@ -17,31 +17,16 @@ public class CustomerController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-        res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
-        out.println("<html><body><h1>Customer List</h1><table border='1'>");
-        out.println("<tr><th>ID</th><th>Name</th><th>City</th><th>Mobile</th><th>Age</th></tr>");
-
         try {
-//            List<Customer> customerList = customerService.retrieveCustomers();
-//            req.setAttribute("customerList", customerList);
-//            req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            req.setAttribute("errorMessage", "Something went wrong: " + e.getMessage());
-//            req.getRequestDispatcher("/error.jsp").forward(req, res);
-//
-//        }
-            List<Customer> list = customerService.retrieveCustomers();
-            for (Customer c : list) {
-                out.println("<tr><td>" + c.getId() + "</td><td>" + c.getName() + "</td><td>"
-                        + c.getCity() + "</td><td>" + c.getMobileNo() + "</td><td>" + c.getAge() + "</td></tr>");
-            }
-        } catch (SQLException e) {
-            out.println("<p>Error fetching customers.</p>");
-        }
+            List<Customer> customerList = customerService.retrieveCustomers();
+            req.setAttribute("customerList", customerList);
+            req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);
+        } catch (Exception e) {
+            e.printStackTrace();
+            req.setAttribute("errorMessage", "Something went wrong: " + e.getMessage());
+            req.getRequestDispatcher("/error.jsp").forward(req, res);
 
-        out.println("</table></body></html>");
+        }
     }
 
     @Override
