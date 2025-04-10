@@ -28,9 +28,7 @@
 	<input type = "submit" value="Save Data"/>
 	 <input type="reset" value="Clear">
 	 <br>
-     <div>
-         <button onclick="location.href='index.html'">Back to Home</button>
-     </div>
-</form>
+ </form>
+ <a href="index.html">Home</a>
 </body>
 </html>
