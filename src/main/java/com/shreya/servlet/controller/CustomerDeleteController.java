@@ -38,4 +38,7 @@ public class CustomerDeleteController extends HttpServlet {
         }
         out.println("</body></html>");
     }
+    public void destroy() {
+        System.out.println("CustomerDeleteController destroyed.");
+    }
 }
