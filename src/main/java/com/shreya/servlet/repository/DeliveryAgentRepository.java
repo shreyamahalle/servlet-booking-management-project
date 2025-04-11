@@ -72,7 +72,6 @@ public class DeliveryAgentRepository {
         }
     }
 
-
     public List<DeliveryAgent> retrieveDeliveryAgents() {
         List<DeliveryAgent> deliveryAgents = new ArrayList<>();
         String sql = "SELECT * FROM deliveryagent";

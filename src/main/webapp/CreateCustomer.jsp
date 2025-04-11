@@ -1,5 +1,3 @@
-<!-- JSP Directive -->
-
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page import="java.time.LocalDateTime" %>
 <%@ page import="java.util.Date" %>
@@ -8,7 +6,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
 </head>
 <body>
 <h1>Booking Management System</h1>

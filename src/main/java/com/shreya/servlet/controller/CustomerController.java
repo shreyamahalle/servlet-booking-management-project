@@ -55,56 +55,6 @@ public class CustomerController extends HttpServlet {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //package com.shreya.servlet.controller;
 //
 //import com.shreya.servlet.model.Customer;

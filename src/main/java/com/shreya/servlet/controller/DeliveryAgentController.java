@@ -1,7 +1,5 @@
 package com.shreya.servlet.controller;
-
 import com.shreya.servlet.model.DeliveryAgent;
-import com.shreya.servlet.service.CustomerService;
 import com.shreya.servlet.service.DeliveryAgentService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +14,6 @@ import java.util.List;
 
 public class DeliveryAgentController extends HttpServlet {
     private final DeliveryAgentService deliveryAgentService = new DeliveryAgentService();
-    private final CustomerService customerService = new CustomerService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
