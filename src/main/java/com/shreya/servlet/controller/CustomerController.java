@@ -52,6 +52,32 @@ public class CustomerController extends HttpServlet {
             out.println("<p>Error: " + e.getMessage() + "</p>");
         }
     }
+
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String idStr = request.getParameter("id");  // This must not be null
+
+        if (idStr == null || idStr.trim().isEmpty()) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Customer ID is required.");
+            return;
+        }
+
+        int id = Integer.parseInt(idStr);  // This line throws error if idStr is null
+
+        boolean deleted = false; // Assuming service accepts id
+        try {
+            deleted = customerService.deleteCustomer(id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+        if (deleted) {
+            out.println("<h1>Customer deleted successfully</h1>");
+        } else {
+            out.println("<h1>Customer not found</h1>");
+        }
+        out.println("</body></html>");
+    }
     public void destroy() {
         System.out.println("CustomerController destroyed.");
     }

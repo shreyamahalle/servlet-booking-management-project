@@ -31,11 +31,6 @@
         <servlet-class>com.shreya.servlet.controller.RestaurantController</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>CustomerDeleteController</servlet-name>
-        <servlet-class>com.shreya.servlet.controller.CustomerDeleteController</servlet-class>
-    </servlet>
-
 
     <servlet-mapping>
         <servlet-name>CustomerController</servlet-name>
@@ -56,11 +51,4 @@
         <servlet-name>RestaurantController</servlet-name>
         <url-pattern>/RestaurantController</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>CustomerDeleteController</servlet-name>
-        <url-pattern>/CustomerDeleteController</url-pattern>
-    </servlet-mapping>
-
-
 </web-app>

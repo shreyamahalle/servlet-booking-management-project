@@ -25,7 +25,7 @@ public class RestaurantController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("--------------- inside the doGet() method ---------------");
         List<Restaurant> restaurantList = new ArrayList<>();
-        restaurantList = restaurantService.retrieveRestaurants();
+        restaurantList = RestaurantService.retrieveRestaurants();
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -64,7 +64,7 @@ public class RestaurantController extends HttpServlet {
         restaurant.setArea(area);
 
         try {
-            boolean isInserted = restaurantService.insertRestaurant(restaurant);
+            boolean isInserted = RestaurantService.insertRestaurant(restaurant);
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             out.println("<html><body>");
