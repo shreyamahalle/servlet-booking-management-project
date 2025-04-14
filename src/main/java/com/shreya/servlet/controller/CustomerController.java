@@ -17,15 +17,16 @@ public class CustomerController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+
         try {
+            // Retrieve the customer list
             List<Customer> customerList = customerService.retrieveCustomers();
-            req.setAttribute("customerList", customerList);
-            req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);
+            req.setAttribute("customerList", customerList);  // Set the list to the request scope
+            req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);  // Forward the request to JSP
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("errorMessage", "Something went wrong: " + e.getMessage());
             req.getRequestDispatcher("/error.jsp").forward(req, res);
-
         }
     }
 
@@ -83,7 +84,7 @@ public class CustomerController extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         String name = String.valueOf(Integer.parseInt(req.getParameter("name")));
 
-        boolean customer = customerService.updateCustomer( id,"name");
+        boolean customer = customerService.updateCustomer(id, "name");
         req.setAttribute("customer", customer);
         req.getRequestDispatcher("/update-customer.html").forward(req, res);
     }

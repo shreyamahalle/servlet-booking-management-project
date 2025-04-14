@@ -10,6 +10,6 @@
     <p><strong>Requested URI:</strong> ${pageContext.request.requestURI}</p>
 
     <br/>
-    <a href="index.jsp">Back to Home</a>
+    <a href="index.html">Back to Home</a>
 </body>
 </html>
