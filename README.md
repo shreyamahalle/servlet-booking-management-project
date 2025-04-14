@@ -53,6 +53,7 @@ This project is built with the following technologies:
 - **Servlets**: For handling requests and responses in a web environment.
 - **Maven**: A project management and build automation tool to handle dependencies, building, and packaging.
 - **MySQL**: A reliable relational database system used to store customer, restaurant, delivery agent, and order data.
+- **JDBC**: Database connectivity 
 - **HTML5/CSS3:** Frontend technologies.
 - **Git**: For version control and collaboration.
 
