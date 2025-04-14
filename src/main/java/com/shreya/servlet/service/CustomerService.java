@@ -15,7 +15,7 @@ public class CustomerService {
         return customerRepository.insertCustomer(customer);
     }
 
-    public boolean updateCustomer(int id, String name) throws SQLException {
+    public boolean updateCustomer(int id,String name) throws SQLException {
         return customerRepository.updateCustomer(id, name);
     }
 

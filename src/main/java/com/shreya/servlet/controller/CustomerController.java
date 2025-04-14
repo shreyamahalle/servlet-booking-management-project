@@ -78,6 +78,16 @@ public class CustomerController extends HttpServlet {
         }
         out.println("</body></html>");
     }
+
+    protected void Update(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException, SQLException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        String name = String.valueOf(Integer.parseInt(req.getParameter("name")));
+
+        boolean customer = customerService.updateCustomer( id,"name");
+        req.setAttribute("customer", customer);
+        req.getRequestDispatcher("/update-customer.html").forward(req, res);
+    }
+
     public void destroy() {
         System.out.println("CustomerController destroyed.");
     }
