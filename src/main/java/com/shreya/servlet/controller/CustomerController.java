@@ -1,5 +1,4 @@
 package com.shreya.servlet.controller;
-
 import com.shreya.servlet.model.Customer;
 import com.shreya.servlet.service.CustomerService;
 import jakarta.servlet.ServletException;
