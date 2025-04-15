@@ -20,8 +20,14 @@ public class CustomerController extends HttpServlet {
         try {
             // Retrieve the customer list
             List<Customer> customerList = customerService.retrieveCustomers();
-            req.setAttribute("customerList", customerList);  // Set the list to the request scope
-            req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);  // Forward the request to JSP
+
+            // req.setAttribute("customerList", customerList);  // Set the list to the request scope
+            req.getSession().setAttribute("customerList", customerList);
+
+            //req.getRequestDispatcher("/DisplayCustomer.jsp").forward(req, res);  // Forward the request to JSP
+
+            res.sendRedirect("DisplayCustomer.jsp");
+
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("errorMessage", "Something went wrong: " + e.getMessage());
